@@ -1,6 +1,7 @@
-h1. A LESS Syntax Mode For Coda
+A LESS Syntax Mode For Coda
+
 This is a syntax mode for the LESS language for the text editor Coda for Mac.
 
-h2. ToDo
-bq. Code clean up
-bq. Fix color for 2nd and higher mixin syntax not showing properly.
+ToDo
+Code clean up
+Fix color for 2nd and higher mixin syntax not showing properly.

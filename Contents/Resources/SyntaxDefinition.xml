@@ -52,6 +52,7 @@
 				<state-link state="String"/>
 				<state-link state="SingleString"/>
 				<state-link state="Round bracket"/>
+				<state-link state="URL"/>
 			
 			</state><!-- end #Inside curly brackets -->
 
@@ -90,10 +91,6 @@
 					<regex>\)</regex>
 				</end>
 
-				<keywords id="LESS Variables" color="#ba4747" useforautcomplete="no">
-					<regex>(@[\w\-]+\b)</regex>
-				</keywords>
-
 				<keywords id="LESS Digits" color="#00f" font-style="normal" useforautocomplete="yes">
 					<regex>(?&lt;![#\d\w])([\d]+[ \t]*(?:px|pt|em|ex|cm|in|mm|pc|%)?)</regex>
 				</keywords>
@@ -104,6 +101,10 @@
 
 				<keywords id="LESS Operators" color="#4068AB" useforautocomplete="no">
 					<regex>(\+|\-|\/|\*)</regex>
+				</keywords>
+
+				<keywords id="LESS Variables" color="#ba4747" useforautcomplete="no">
+					<regex>(@[\w\-]+\b)</regex>
 				</keywords>
 			</state>
 
@@ -157,6 +158,7 @@
 				<keywords id="LESS Variables" color="#ba4747" useforautcomplete="no">
 					<regex>(@[\w\-]+\b)</regex>
 				</keywords>
+
 				<keywords id="LESS Digits" color="#00f" font-style="normal" useforautocomplete="yes">
 					<regex>(?&lt;![#\d\w])([\d]+[ \t]*(?:px|pt|em|ex|cm|in|mm|pc|%)?)</regex>
 				</keywords>
@@ -171,17 +173,20 @@
 				<state-link state="String"/>
 				<state-link state="SingleString"/>
 				<state-link state="Round bracket"/>
-
-				<state id="URL" type="string" color="#6563F0" font-weight="normal" font-style="normal">
-					<begin>
-						<string>(?i)(?&lt;=url)\s*\(</string>
-					</begin>
-					<end>
-						<regex>\)</regex>
-					</end>
-				</state>
+				<state-link state="URL"/>
 
 			</state>
+
+			<state id="URL" type="string" color="#6563F0" font-weight="normal" font-style="normal">
+				<begin>
+					<string>(?i)(url)\(|(?i)(url)\s\(</string>
+				</begin>
+				<end>
+					<regex>\)</regex>
+				</end>
+			</state>
+
+			
 		</default>
 	</states>
 </syntax>
